@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>看电影啦</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="menu of menuList">
+        <a :href="menu.url">{{menu.title}}</a>
+      </li>
+    </ul>
+    <video controls autoplay>
+      <source src="static/test.mkv" type="video/mp4">
+    </video>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    (function () {
+      var app = new Vue({
+        el: '#app',
+        data: {
+          menuList: @menuList
+        }
+      });
+      // ejs output
+      // app.menuList = @menuList;
+    })();
+  </script>
+  <script></script>
+</body>
+
+</html>
