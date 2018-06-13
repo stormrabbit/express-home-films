@@ -10,7 +10,9 @@ router.get('/', (req, res) => {
     // console.log('allFiles==>');
     // console.log(allFiles);
     const films = allFiles.map(filename => {
-        const urlStart = filename.indexOf('/public/') + '/public/'.length;
+        const urlStart = filename.indexOf('public') + 'public'.length + 1;
+		console.log('filename==', filename);
+		console.log('urlStart==', urlStart);
         const fileTitle = filename.substring(filename.lastIndexOf('/') + 1);
         return {
             title: fileTitle,
