@@ -82,4 +82,17 @@ var init = () => {
   frameDiv.appendChild(btn);
 };
 
-init();
+var a = setInterval(() => {
+  var ending = document.getElementsByClassName("loading-state")[0].innerText;
+  console.log(ending)
+  if (ending === "没有更多评论") {
+    clearInterval(a);
+    console.log('轮询结束')
+    window.scrollTo(0, 0);
+    init();
+    return
+  }
+  window.scrollTo(0, document.body.scrollHeight);
+}, 1500);
+
+
